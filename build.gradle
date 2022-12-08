@@ -15,5 +15,13 @@ dependencies {
 }
 
 test {
-    useTestNG()
+    useTestNG() {
+       // suites "src/test/resources/suites/suiteFull.xml"
+        useDefaultListeners true
+
+        if(System.properties['group']){
+            includeGroups System.properties['group']
+        }
+    }
 }
+
